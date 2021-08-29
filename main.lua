@@ -82,7 +82,7 @@ controls.bind = function(playerId,controlName,onPressed,onReleased)
 end
 
 controls.glue = function(...)
-  for i=1,#select("#",...),4 do
+  for i=1,select("#",...),4 do
     local v = select(i,...)
     controls.bind(v.playerId or v[1],v.controlName or v[2],v.onPressed or v[3],v.onReleased or v[4])
   end
@@ -93,7 +93,7 @@ controls.unbind = function(playerId,controlName)
 end
 
 controls.unglue = function(...)
-  for i=1,#select("#",...),4 do
+  for i=1,select("#",...),4 do
     local v = select(i,...)
     controls.unbind(v.playerId or v[1],v.controlName or v[2])
   end
